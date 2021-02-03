@@ -51,10 +51,11 @@ class User(AbstractUser):
     (CURRENCY_ZAR, "ZAR"),
   )
 
-  avatar =  models.ImageField(null=True, blank=True)
-  bio = models.TextField(default="", null=True)
-  date_of_birth = models.DateField(null=True, blank=True)
-  gender = models.CharField(choices=GENDER_CHOICES, max_length=10, null=True, blank=True)
-  language = models.CharField(choices=LANGUAGE_CHOICES, max_length=16, null=True, blank=True)
-  currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, null=True)
+  avatar =  models.ImageField(blank=True)
+  bio = models.TextField(default="")
+  date_of_birth = models.DateField(blank=True)
+  gender = models.CharField(choices=GENDER_CHOICES, max_length=10, blank=True)
+  language = models.CharField(choices=LANGUAGE_CHOICES, max_length=16, blank=True)
+  currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3)
   superhost = models.BooleanField(default=False)
+  date = models.DateField(blank=True, null=True) 
